@@ -11,7 +11,7 @@ public class RateLimitAttribute : Attribute
     /// 
     /// </summary>
     /// <param name="limitCount">接口限制最多使用次数</param>
-    /// <param name="periodSeconds">限制的单位时间</param>
+    /// <param name="periodSeconds">限制的时间 /s</param>
     public RateLimitAttribute(int limitCount, int periodSeconds)
     {
         LimitCount = limitCount;
