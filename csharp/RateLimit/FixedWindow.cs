@@ -1,6 +1,6 @@
 ﻿namespace DIYComponents.RateLimit;
 
-internal class FixedWindow
+internal class FixedWindow : ITryConsume
 {
     private readonly int _limitCount;
     private readonly TimeSpan _period;

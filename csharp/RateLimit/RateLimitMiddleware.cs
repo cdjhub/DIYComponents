@@ -4,10 +4,10 @@ using System.Net.Http;
 
 namespace DIYComponents.RateLimit;
 
-public class RateLimitMiddleware
+public class RateLimitMiddleware<T> where T : ITryConsume
 {
     private readonly RequestDelegate _next;
-    private readonly ConcurrentDictionary<string, FixedWindow> _fixedWindows = new ConcurrentDictionary<string, FixedWindow>();
+    private readonly ConcurrentDictionary<string, ITryConsume> _fixedWindows = new ConcurrentDictionary<string, ITryConsume>();
 
     public RateLimitMiddleware(RequestDelegate next)
     {
@@ -26,7 +26,9 @@ public class RateLimitMiddleware
         var ipAddress = context.Connection.RemoteIpAddress.ToString();
         var key = $"{ipAddress}-{context.Request.Path}";
 
-        var fixedWindows = _fixedWindows.GetOrAdd(key, k => new FixedWindow(rateLimitAttribute.LimitCount, rateLimitAttribute.Period));
+        var fixedWindows = _fixedWindows.GetOrAdd(key, k =>
+            TryConsumeFactory.CreateInstance<T>(rateLimitAttribute.LimitCount, rateLimitAttribute.Period)
+        );
 
         if (!fixedWindows.TryConsume())
         {
