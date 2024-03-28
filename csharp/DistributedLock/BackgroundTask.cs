@@ -37,7 +37,9 @@ public class BackgroundTask
             _buckets[i] = new List<Action>();
         }
 
-        Task.Run(() => StartTimer());
+        Thread backgroundThread = new Thread(StartTimer);
+        backgroundThread.IsBackground = true;
+        backgroundThread.Start();
     }
 
     /// <summary>
