@@ -6,7 +6,7 @@ namespace DIYComponents.DistributeLock;
 /// 基于Redis的分布式锁，实现互斥性,可重入性，看门狗
 /// </summary>
 public class DistributedLock
-{
+{   
     /// <summary>
     /// 默认超时时间
     /// </summary>
