@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RateLimit", "RateLimit\Rate
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DistributedLock", "DistributedLock\DistributedLock.csproj", "{C23E87B8-3B22-4BF9-9748-D066DC2A9773}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActionResultManager", "ActionResultManager\ActionResultManager.csproj", "{AACC3523-DFF6-407A-983E-9B81E01EF9C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActionResultManager", "ActionResultManager\ActionResultManager.csproj", "{AACC3523-DFF6-407A-983E-9B81E01EF9C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdempotentToken", "..\..\..\learn\dotnet\WebSkill\IdempotentToken\IdempotentToken.csproj", "{48FA73CF-8B55-4AF0-A8C9-861ED2EEB1D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{AACC3523-DFF6-407A-983E-9B81E01EF9C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AACC3523-DFF6-407A-983E-9B81E01EF9C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AACC3523-DFF6-407A-983E-9B81E01EF9C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48FA73CF-8B55-4AF0-A8C9-861ED2EEB1D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48FA73CF-8B55-4AF0-A8C9-861ED2EEB1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48FA73CF-8B55-4AF0-A8C9-861ED2EEB1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48FA73CF-8B55-4AF0-A8C9-861ED2EEB1D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
